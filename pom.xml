@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>josm-geotools-wfs</groupId>
+  <artifactId>josm-geotools-wfs</artifactId>
+  <version>1.0</version>
+  <name>Josm geotools wfs</name>
+  <description>Extend the josm geotools plug-in with WFS functionality</description>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source/>
+          <target/>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.6</version>
+        <executions>
+          <execution>
+        <id>copy-dependencies</id>
+        <phase>package</phase>
+        <goals>
+          <goal>copy-dependencies</goal>
+        </goals>
+        <configuration>
+          <outputDirectory>lib</outputDirectory>
+          <overWriteIfNewer>true</overWriteIfNewer>
+          <excludeGroupIds>net.sf.geographiclib,commons-pool, commons-beanutils,
+            commons-logging,hsqldb,javax.media,net.java.dev.jsr-275,it.geosolutions.imageio-ext,
+            com.vividsolutions,it.geosolutions.jaiext,org.jaitools,org.ejml
+          </excludeGroupIds>
+          <excludeArtifactIds>gt-api, gt-coverage,gt-data,gt-epsg-extension,
+            gt-hsql,gt-geotiff,gt-main,gt-opengis,gt-referencing,gt-metadata,
+            gt-shapefile,jdom
+          </excludeArtifactIds>
+        </configuration>
+      </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
