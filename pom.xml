@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>josm-geotools-wfs</groupId>
   <artifactId>josm-geotools-wfs</artifactId>
-  <version>1.0</version>
+  <version>22.0.1</version>
   <name>Josm geotools wfs</name>
   <description>Extend the josm geotools plug-in with WFS functionality</description>
   <build>
@@ -43,4 +43,27 @@
       </plugin>
     </plugins>
   </build>
+  <dependencies>
+    <dependency>
+      <groupId>org.geotools</groupId>
+      <artifactId>gt-wfs-ng</artifactId>
+      <version>${geotools.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openstreetmap.josm</groupId>
+      <artifactId>josm</artifactId>
+      <version>${josm.version}</version>
+    </dependency>
+  </dependencies>
+    <repositories>
+    <repository>
+      <id>josm</id>
+      <name>Josm repository</name>
+      <url>https://josm.openstreetmap.de/nexus/content/repositories/releases/</url>
+    </repository>
+  </repositories>
+    <properties>
+      <geotools.version>22.0</geotools.version>
+      <josm.version>15628</josm.version>
+    </properties>
 </project>
