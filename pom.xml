@@ -2,17 +2,25 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>josm-geotools-wfs</groupId>
   <artifactId>josm-geotools-wfs</artifactId>
-  <version>22.0.1</version>
+  <version>27.1.1</version>
   <name>Josm geotools wfs</name>
   <description>Extend the josm geotools plug-in with WFS functionality</description>
+  <properties>
+    <geotools.version>27.1</geotools.version>
+    <josm.version>19277</josm.version>
+    <maven.compiler.version>3.14.1</maven.compiler.version>
+    <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+  </properties>
   <build>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.5.1</version>
+        <version>${maven.compiler.version}</version>
         <configuration>
-          <source/>
-          <target/>
+          <release>${maven.compiler.release}</release>
+          <parameters>true</parameters>
         </configuration>
       </plugin>
       <plugin>
@@ -61,9 +69,10 @@
       <name>Josm repository</name>
       <url>https://josm.openstreetmap.de/nexus/content/repositories/releases/</url>
     </repository>
+    <repository>
+      <id>osgeo</id>
+      <name>Osgeo repository</name>
+      <url>https://repo.osgeo.org/repository/geotools-releases/</url>
+    </repository>
   </repositories>
-    <properties>
-      <geotools.version>22.0</geotools.version>
-      <josm.version>15628</josm.version>
-    </properties>
 </project>
